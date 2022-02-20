@@ -33,6 +33,7 @@ jobs:
         shell: python
   windows-script:
     runs-on: windows-latest
+    needs: [hello-world]
     steps:
       - name: default powershell
         run: Get-Location
