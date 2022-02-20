@@ -28,5 +28,6 @@ jobs:
       - name: Python Script
         run: |
           import platform
-          print (platform.processer())
+          print(platform.processor())
+          print(platform.architecture())
         shell: python
