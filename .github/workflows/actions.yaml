@@ -1,0 +1,13 @@
+name: Shell commands
+on: [push]
+jobs:
+  github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Javascript action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Kalyan
+      - name: LogGreetingTime
+        run: echo "${{ steps.greet.output.time }}"
