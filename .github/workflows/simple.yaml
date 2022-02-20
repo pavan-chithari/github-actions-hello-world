@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: eco string
         run: echo "Hello World"
-  run-shell-commands:
+  run-shell-commands-1:
     runs-on: ubuntu-latest
     steps:
       - name: multiline script
