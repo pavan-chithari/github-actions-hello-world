@@ -15,6 +15,10 @@ jobs:
           npm --version
       - name: ansible version
         run: ansible --version
-      - name: ansible version
-        run: packer --version
+      - name: other version
+        run: |
+          packer --version
+          python --version
+          java --version
+          dotnet --version
         
