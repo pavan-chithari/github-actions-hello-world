@@ -6,6 +6,9 @@ jobs:
     steps:
       - name: eco string
         run: echo "Hello World"
+  run-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
       - name: multiline script
         run: | 
           node --version
