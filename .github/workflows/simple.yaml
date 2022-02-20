@@ -14,5 +14,5 @@ jobs:
           node --version
           npm --version
       - name: ansible version
-          run: ansible --version
+        run: ansible --version
         
