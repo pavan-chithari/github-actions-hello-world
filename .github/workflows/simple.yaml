@@ -13,7 +13,6 @@ jobs:
         run: | 
           node --version
           npm --version
-          nvm ls
       - name: ansible version
         run: ansible --version
       - name: other version
