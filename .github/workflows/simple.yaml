@@ -22,4 +22,11 @@ jobs:
           java --version
           dotnet --version
           nginx -V
-        
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Python Script
+        run: |
+          import platform
+          print (platform.processer())
+          
