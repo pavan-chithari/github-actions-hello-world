@@ -25,7 +25,6 @@ jobs:
           nginx -V
   python-script:
     runs-on: ubuntu-latest
-    needs: [get-versions]
     steps:
       - name: Python Script
         run: |
