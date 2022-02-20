@@ -21,4 +21,5 @@ jobs:
           python --version
           java --version
           dotnet --version
+          nginx --version
         
