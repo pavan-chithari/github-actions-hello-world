@@ -7,4 +7,5 @@ jobs:
       - name: eco string
         run: echo "Hello World"
       - name: multiline script
-        run: node --version
+        run: | 
+          node --version
