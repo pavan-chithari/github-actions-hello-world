@@ -1,15 +1,15 @@
 name: Shell commands
 on: [push]
 jobs:
-  run-shell-commands:
+  hello-world:
     runs-on: ubuntu-latest
     steps:
-      - name: eco string
-        run: echo "Hello World"
-  run-shell-commands-1:
+      - name: Hello World
+        run: echo "Hello World!"
+  get-versions:
     runs-on: ubuntu-latest
     steps:
-      - name: multiline script
+      - name: 
         run: | 
           node --version
           npm --version
