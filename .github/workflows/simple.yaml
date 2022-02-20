@@ -31,3 +31,11 @@ jobs:
           print(platform.processor())
           print(platform.architecture())
         shell: python
+  windows-script:
+    runs-on: windows-latest
+    steps:
+      - name: default powershell
+        run: Get-Location
+      - name: windows Script Current directory
+        run: pwd
+        shell: bash
