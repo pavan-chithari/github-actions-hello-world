@@ -1,7 +1,7 @@
 name: cron job
 on: 
   schedule:
-    - cron: "0/1 * * * *"
+    - cron: "0/5 * * * *"
   pull_request:
     type: [closed, assigned, opened, reopened]
 
@@ -11,4 +11,3 @@ jobs:
     steps:
       - name: cron job
         run: echo "Cron Job!"
-        
