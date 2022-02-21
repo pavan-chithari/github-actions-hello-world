@@ -9,3 +9,5 @@ jobs:
     steps:
       - name: cron job
         run: echo "Cron Job! && repository dispatch"
+      - name: payload event
+        run: echo ${{ github.event.client_payload.env }}
