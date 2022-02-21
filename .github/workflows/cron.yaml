@@ -1,9 +1,11 @@
 name: cron job
-on: [push]
+on: 
+  repository_dispatch:
+    types: [build]
 
 jobs:
   cron-job:
     runs-on: ubuntu-latest
     steps:
       - name: cron job
-        run: echo "Cron Job!"
+        run: echo "Cron Job! && repository dispatch"
