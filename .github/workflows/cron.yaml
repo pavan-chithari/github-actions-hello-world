@@ -1,7 +1,7 @@
 name: cron job
 on: 
   schedule:
-    - cron: "* * * * *"
+    - cron: "0/1 * * * *"
   pull_request:
     type: [closed, assigned, opened, reopened]
 
