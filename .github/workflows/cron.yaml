@@ -1,0 +1,13 @@
+name: Checkout
+on: 
+  schedule:
+    - cron: "* * * * * "
+  pull_request:
+    type: [closed, assigned, opened, reopened]
+
+jobs:
+  cron-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: cron job
+        
