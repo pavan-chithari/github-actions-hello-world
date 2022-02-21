@@ -1,9 +1,5 @@
 name: cron job
-on: 
-  schedule:
-    - cron: "0/5 * * * *"
-  pull_request:
-    type: [closed, assigned, opened, reopened]
+on: [push]
 
 jobs:
   cron-job:
