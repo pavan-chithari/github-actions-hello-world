@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Log Environment Variables
-      run: |
-        echo "GITHUB_ACTION: ${{GITHUB_ACTION}}"
-        echo "GITHUB_ACTION1: ${GITHUB_ACTION}"
+        run: |
+          echo "GITHUB_ACTION: ${{GITHUB_ACTION}}"
+          echo "GITHUB_ACTION1: ${GITHUB_ACTION}"
       
