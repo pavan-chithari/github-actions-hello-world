@@ -1,7 +1,7 @@
 name: Environment variables
-on: push
+on: [push]
 env:
-  for_all_jobs: "for all jobs"
+  for_all_jobs: for all jobs
 
 jobs:
   env-vars-jobs:
@@ -13,12 +13,12 @@ jobs:
         env:
           step_specific_env: for step only
         run: | 
-          echo "${{for_all_jobs}}"
-          echo "${{job_specific_env}}"
-          echo "${{step_specific_env}}"
+          echo "${for_all_jobs}"
+          echo "${job_specific_env}"
+          echo "${step_specific_env}"
       - name: Log Environment Variables
         run: | 
-          echo "${{for_all_jobs}}"
-          echo "${{job_specific_env}}"
-          echo "${{step_specific_env}}"
+          echo "${for_all_jobs}"
+          echo "${job_specific_env}"
+          echo "${step_specific_env}"
       
