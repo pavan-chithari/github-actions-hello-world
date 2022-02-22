@@ -1,0 +1,26 @@
+name: push random file
+on: [push]
+jobs:
+  code-checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: push random file
+        run: |
+          pwd
+          ls -a
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
+          git confit --global usr.email "bot@bot.com"
+          git confit --global usr.email "bot"
+          git fetch
+          git checkout main
+          git branch --set-upstream-to=origin/main
+          git pull
+          ls -a
+          echo $RANDOM >> random.txt
+          ls -a
+          git add .
+          git commit -m "creating file"
+          git push
+
+          git@github.com:pavan-chithari/github-actions-hello-world.git
