@@ -1,7 +1,7 @@
 name: Environment variables
 on: push
 env:
-  for_all_jobs: for all jobs
+  for_all_jobs: "for all jobs"
 
 jobs:
   env-vars-jobs:
