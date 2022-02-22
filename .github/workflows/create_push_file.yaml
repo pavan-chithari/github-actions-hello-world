@@ -22,5 +22,3 @@ jobs:
           git add .
           git commit -m "creating file"
           git push
-
-          git@github.com:pavan-chithari/github-actions-hello-world.git
