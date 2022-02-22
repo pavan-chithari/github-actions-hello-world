@@ -13,8 +13,8 @@ jobs:
           git config --global usr.email "bot@bot.com"
           git config --global usr.email "bot"
           git fetch
-          git checkout master
-          git branch --set-upstream-to=origin/master
+          git checkout main
+          git branch --set-upstream-to=origin/main
           git pull
           ls -a
           echo $RANDOM >> random.txt
