@@ -1,0 +1,24 @@
+name: Environment variables
+on: push
+env:
+  for_all_jobs: for all jobs
+
+jobs:
+  env-vars-jobs:
+  runs-on: ubuntu-latest
+  env:
+    job_specific_env: only job specific
+  steps:
+    - name: Log Environment Variables
+      env:
+        step_specific_env: for step only
+      run: | 
+        echo "${{for_all_jobs}}"
+        echo "${{job_specific_env}}"
+        echo "${{step_specific_env}}"
+    - name: Log Environment Variables
+      run: | 
+        echo "${{for_all_jobs}}"
+        echo "${{job_specific_env}}"
+        echo "${{step_specific_env}}"
+      
