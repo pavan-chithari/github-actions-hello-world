@@ -1,0 +1,17 @@
+name: Secrets
+on: [push]
+permissions:
+  id-token: write # required to use OIDC authentication
+  contents: read # required to checkout the code from the repo
+jobs:
+  serets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::962096317866:role/github-actions
+          role-duration-seconds: 900 # the ttl of the session, in seconds.
+          aws-region: us-east-1
+      - name: 
+        run: aws s3 ls
