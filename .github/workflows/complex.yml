@@ -1,20 +1,24 @@
-name: compled
+name: compledx
 on: push
 jobs:
   ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - run: date
+      - name: ubuntu
+        run: date
   window:
     runs-on: windows-latest
       steps:
-        - run: date
+        - name: ubuntu
+          run: date
   macos:
     runs-on: macos-latest
     steps:
-      - run: date
+      - name: ubuntu
+        run: date
   depends:
     needs: [ubuntu,windows,macos]
     runs-on: macos-latest
     steps:
-      - run: date
+      - name: ubuntu
+        run: date
