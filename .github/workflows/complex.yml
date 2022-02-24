@@ -8,9 +8,9 @@ jobs:
         run: date
   window:
     runs-on: windows-latest
-      steps:
-        - name: ubuntu
-          run: date
+    steps:
+      - name: ubuntu
+        run: date
   macos:
     runs-on: macos-latest
     steps:
