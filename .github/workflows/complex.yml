@@ -1,4 +1,4 @@
-name: compledx
+name: complex
 on: push
 jobs:
   ubuntu:
@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: ubuntu
         run: date
-  window:
+  windows:
     runs-on: windows-latest
     steps:
       - name: ubuntu
