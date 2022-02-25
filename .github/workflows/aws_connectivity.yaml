@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v1
-        with:
-          ref: github_actions
 
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
