@@ -10,6 +10,14 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1
 
+      - name: list instances
+        run: |
+          ansible-galaxy collection install amazon.aws
+          ansible-galaxy collection list
+          ansible --version
+          find ~/ -type f -name "ansible.cfg"
+          ls /home/runner/.ansible
+          
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -17,13 +25,14 @@ jobs:
           role-duration-seconds: 900 # the ttl of the session, in seconds.
           aws-region: ap-south-1
       # aws ec2 describe-instances
-      - name: list instances
-        run: |
-          aws s3 ls
-          ansible-galaxy collection install amazon.aws
-          ansible-galaxy collection list
-          ansible --version
-          find ~/ -type f -name "ansible.cfg"
+      # aws s3 ls
+      # - name: list instances
+      #   run: |
+      #     ansible-galaxy collection install amazon.aws
+      #     ansible-galaxy collection list
+      #     ansible --version
+      #     find ~/ -type f -name "ansible.cfg"
+      #     ls /home/runner/.ansible
 
       - name: describe instances
         uses: arillso/action.playbook@master
