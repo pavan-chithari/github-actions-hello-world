@@ -14,7 +14,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::962096317866:role/github-actions
-          role-duration-seconds: 300 # the ttl of the session, in seconds.
+          role-duration-seconds: 900 # the ttl of the session, in seconds.
           aws-region: ap-south-1
       # aws ec2 describe-instances
       - name: list instances
