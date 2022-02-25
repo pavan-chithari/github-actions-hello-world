@@ -1,0 +1,21 @@
+plugin: aws_ec2
+
+regions:
+  - us-east-1
+
+filters:
+  tag:project-name: "test"
+  tag:environment-name: "dev"
+  instance-state-name: "running"
+
+hostnames:
+  - private-ip-address
+
+keyed_groups:
+  - key: tags['service-name']
+    prefix: "aws_dev"
+    parent_group: "aws_dev"
+
+  - key: "platform"
+    prefix: "aws"
+    parent_group: "aws_ec2"

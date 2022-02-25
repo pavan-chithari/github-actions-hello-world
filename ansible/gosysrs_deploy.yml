@@ -1,0 +1,19 @@
+---
+- name: "GoSysRS Application"
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: List Host Groups
+      debug:
+        var: groups
+      delegate_to: localhost
+      run_once: true
+
+    # - name: 'Testing connectivity for {{ ansible_limit }} hosts'
+    #   win_ping:
+
+    # - name: 'GoSysRS applicaiton deployment'
+    #   include_role:
+    #     name: gosysrs_deploy
+

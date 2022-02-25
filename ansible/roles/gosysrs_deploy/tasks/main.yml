@@ -1,0 +1,132 @@
+- name: check if D drive exists on the server or not
+  win_stat:
+    path: "{{ dir }}"
+  register: d_info
+
+# - name: Stop IIS using raw command
+#   raw: "iisreset /stop"
+
+# - name: Create required folders
+#   win_file:
+#     path: "{{ item }}"
+#     state: directory
+#   loop:
+#     - "{{ dir }}\\data"
+#     - "{{ Artifact_Location }}"
+#     - "{{ GoSysRs_DeploymentPath }}"
+
+# - name: Downloading the Web service Artifact.
+#   win_get_url:
+#     url: "{{ GoSysRsservice_ArtifactURL }}"
+#     dest: "{{ Artifact_Location }}"
+#     url_username: "{{ trsvcaccount_username }}"
+#     url_password: "{{ trsvcaccount_password }}"
+#     timeout: 120
+#     force: yes
+
+# - name: Grant read and execute permissions
+#   win_acl:
+#     user: Users
+#     path: "{{ Artifact_Location }}"
+#     type: allow
+#     rights: ReadAndExecute
+#     state: present
+#     inherit: ContainerInherit,ObjectInherit
+
+# - name: Remove old ams backup
+#   win_file:
+#     path: "{{ backup_folder }}\\"
+#     state: absent
+
+# - name: Create {{ backup_folder }} folder
+#   win_file:
+#     path: "{{ item }}"
+#     state: directory
+#   loop:
+#     - "{{ backup_folder }}"
+
+# - name: Take backup of current running website
+#   win_copy:
+#     src: "{{ GoSysRs_DeploymentPath }}"
+#     dest: "{{ backup_folder }}"
+#     remote_src: yes
+
+# - name: Create {{ GoSysRs_DeploymentPath }} folder
+#   win_file:
+#     path: "{{ item }}"
+#     state: directory
+#   loop:
+#     - "{{ GoSysRs_DeploymentPath }}"
+
+# - name: Verify copy
+#   win_wait_for:
+#     path: "{{ backup_folder }}"
+
+# - name: Cleanup current running website
+#   win_file:
+#     path: "{{ GoSysRs_DeploymentPath }}"
+#     state: absent
+
+# - name: unzip the deployed folder and delete the zip file
+#   win_unzip:
+#     src: "{{ Artifact_Location }}/{{ buildNum }}.zip"
+#     dest: "{{ GoSysRs_DeploymentPath }}"
+#     remote_src: yes
+#     delete_archive: yes
+
+# - name: Get "{{ GoSysRs_SITENAME }}" Website information.
+#   win_iis_website:
+#     name: "{{ GoSysRs_SITENAME }}"
+#     physical_path: "{{ GoSysRs_DeploymentPath }}"
+#     register: website_info
+
+# - name: Stopping "{{ GoSysRs_SITENAME }}" Website.
+#   win_iis_website:
+#     name: "{{ GoSysRs_SITENAME }}"
+#     physical_path: "{{ GoSysRs_DeploymentPath }}"
+#     state: stopped
+#     when: website_info.state == started
+
+# - name: Removing "{{ GoSysRs_SITENAME }}" Website.
+#   win_iis_website:
+#     name: "{{ GoSysRs_SITENAME }}"
+#     state: absent
+
+# - name: Get "{{ GoSysRs_SITENAME }}" app pool information.
+#   win_iis_webapppool:
+#     name: "{{ GoSysRs_SITENAME }}"
+#     register: apppool_info
+
+# - name: Removing "{{ GoSysRs_SITENAME }}" app pool.
+#   win_iis_webapppool:
+#     name: "{{ GoSysRs_SITENAME }}"
+#     state: absent
+#     when: apppool_info.state == present
+
+# - name: "Create {{ GoSysRs_SITENAME }} application pool"
+#   win_iis_webapppool:
+#     name: "{{ GoSysRs_SITENAME }}"
+#     state: started
+#     attributes:
+#       managedRuntimeVersion: v4.0
+#       managedPipelineMode: Integrated
+#       processModel.identityType: ApplicationPoolIdentity
+#       enable32BitAppOnWin64: false
+#       failure.rapidFailProtection: true
+#       recycling.periodicRestart.time: "00:00:00"
+#       recycling.periodicRestart.schedule: ["04:00:00"]
+#       recycling.logEventOnRecycle: ConfigChange,OnDemand,IsapiUnhealthy,Memory,PrivateMemory,Requests,Schedule,Time
+#       processmodel.idleTimeout: 00:00:00
+#       processmodel.idleTimeoutAction: Suspend
+#       startMode: AlwaysRunning
+
+# - name: "Create {{ GoSysRs_SITENAME }} website"
+#   win_iis_website:
+#     name: "{{ GoSysRs_SITENAME }}"
+#     state: started
+#     port: "{{ GoSysRs_PORT }}"
+#     application_pool: "{{ GoSysRs_SITENAME }}"
+#     physical_path: "{{ GoSysRs_DeploymentPath }}"
+
+# - name: Start IIS using raw command
+#   raw: "iisreset /start"

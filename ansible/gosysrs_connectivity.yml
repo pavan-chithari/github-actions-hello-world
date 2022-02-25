@@ -1,0 +1,13 @@
+- name: Test Dynamic Inventory
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: List Host Groups
+      debug:
+        var: groups
+      delegate_to: localhost
+      run_once: true
+
+    # - name: "Testing connectivity for {{ ansible_limit }} hosts"
+    #   win_ping:

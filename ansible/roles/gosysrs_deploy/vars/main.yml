@@ -1,0 +1,8 @@
+dir: "D:"
+gosysrsURL: "https://tr1.jfrog.io/artifactory/generic-local/CTT/GST/GoSysRS/"
+Artifact_Location: '{{ dir }}\\Artifacts\\'
+GoSysRs_DeploymentPath: '{{ dir }}\\Inetpub\\wwwroot\\{{ GoSysRs_SITENAME }}\\'
+GoSysRsservice_ArtifactURL: "{{ gosysrsURL }}/{{ buildNum }}.zip"
+GoSysRs_SITENAME: "GoSystemRS"
+backup_folder: '{{ dir }}\\Inetpub\\wwwroot\\{{ GoSysRs_SITENAME }}_backup\\'
+GoSysRs_PORT: "8400"
