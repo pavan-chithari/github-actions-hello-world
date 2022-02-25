@@ -23,7 +23,7 @@ jobs:
           ansible-galaxy collection install amazon.aws
           ansible-galaxy collection list
           ansible --version
-          sudo ls /etc/ansible/ansible
+          find ~/ -type f -name "ansible.cfg"
 
       - name: describe instances
         uses: arillso/action.playbook@master
