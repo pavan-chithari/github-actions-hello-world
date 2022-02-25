@@ -1,5 +1,5 @@
 name: push random file
-on: [push]
+on: [pull_request]
 jobs:
   code-checkout:
     runs-on: ubuntu-latest

@@ -1,5 +1,5 @@
 name: Environment variables
-on: [push]
+on: [pull_request]
 env:
   for_all_jobs: for all jobs
 
