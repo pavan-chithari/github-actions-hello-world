@@ -14,4 +14,6 @@ jobs:
           role-duration-seconds: 900 # the ttl of the session, in seconds.
           aws-region: us-east-1
       - name: 
-        run: aws s3 ls
+        run: |
+          aws s3 ls
+          aws ec2 describe-instances
