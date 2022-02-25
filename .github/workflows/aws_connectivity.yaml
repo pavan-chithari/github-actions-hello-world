@@ -20,7 +20,9 @@ jobs:
       - name: list instances
         run: |
           aws s3 ls
-          aws ec2 describe-instances
+          ansible-galaxy collection install amazon.aws
+          ansible-galaxy collection list
+          ls /etc/ansible/ansible
       - name: describe instances
         uses: arillso/action.playbook@master
         with:
