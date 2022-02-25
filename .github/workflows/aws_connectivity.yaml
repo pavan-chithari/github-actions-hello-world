@@ -26,5 +26,4 @@ jobs:
         uses: arillso/action.playbook@master
         with:
           playbook: ansible/gosysrs_connectivity.yml
-          limit: aws_dev_demo
           inventory: ansible/inventory/aws_dev_aws_ec2.yml
