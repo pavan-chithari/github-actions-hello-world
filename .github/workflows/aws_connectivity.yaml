@@ -22,7 +22,9 @@ jobs:
           aws s3 ls
           ansible-galaxy collection install amazon.aws
           ansible-galaxy collection list
-          ls /etc/ansible/ansible
+          ansible --version
+          sudo ls /etc/ansible/ansible
+
       - name: describe instances
         uses: arillso/action.playbook@master
         with:
