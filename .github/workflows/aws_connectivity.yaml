@@ -13,12 +13,13 @@ jobs:
           role-to-assume: arn:aws:iam::962096317866:role/github-actions
           role-duration-seconds: 900 # the ttl of the session, in seconds.
           aws-region: ap-south-1
-
+      # aws ec2 describe-instances
       - name: list instances
         run: |
           aws s3 ls
-          aws ec2 describe-instances
+          ls -R
           
+
       - name: describe instances
         uses: arillso/action.playbook@master
         with:
