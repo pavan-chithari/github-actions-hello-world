@@ -4,7 +4,7 @@ permissions:
   id-token: write # required to use OIDC authentication
   contents: read # required to checkout the code from the repo
 jobs:
-  serets:
+  aws-connectivity:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
