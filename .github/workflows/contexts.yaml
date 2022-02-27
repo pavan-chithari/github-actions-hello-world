@@ -19,4 +19,4 @@ jobs:
       - name: Dump matrix context
         run: echo '${{ toJSON(matrix) }}'
       - name: echo email
-        run: echo '${{ toJson(github.event.commits[0].author.email}}'
+        run: echo '${{ toJson(github.event.commits[0].author.email)}}'
