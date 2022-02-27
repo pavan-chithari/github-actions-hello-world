@@ -7,7 +7,8 @@ jobs:
       matrix:
         os_version: [macos-latest, ubunt-latest, windows-latest]
         node_version: [6, 8, 10]
-      fail-fast: true
+      fail-fast: 
+      timeout-minutes: 2
     runs-on: ${{ matrix.os_version }}
     steps:
       - name: Log Node Version
