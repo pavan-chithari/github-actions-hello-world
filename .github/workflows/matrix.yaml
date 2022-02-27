@@ -5,7 +5,7 @@ jobs:
   node-version:
     strategy:
       matrix:
-        os_version: [macos-latest, ubunt-latest, windows-latest]
+        os_version: [macos-latest, ubuntu-latest, windows-latest]
         node_version: [6, 8, 10]
       fail-fast: false
     runs-on: ${{ matrix.os_version }}
