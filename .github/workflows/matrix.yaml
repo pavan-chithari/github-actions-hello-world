@@ -9,6 +9,6 @@ jobs:
       - name: another node version
         uses: actions/setup-node@v1
         with:
-          node-version: '10.x'
+          node-version: 6
       - name: Log Node Version
         run: node -v
