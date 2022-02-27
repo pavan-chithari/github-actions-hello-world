@@ -4,6 +4,10 @@ on: push
 jobs:
   dump_contexts_to_log:
     runs-on: ubuntu-latest
+    # continue-on-error: true
+    # if: failure()
+    # timeout-minutes: 360
+
     steps:
       - name: Dump GitHub context
         id: github_context_step
@@ -20,3 +24,5 @@ jobs:
         run: echo '${{ toJSON(matrix) }}'
       - name: echo email
         run: echo '${{ toJson(github.event.commits[0].author.email)}}'
+
+        
