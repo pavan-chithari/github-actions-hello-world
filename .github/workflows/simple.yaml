@@ -22,6 +22,7 @@ jobs:
           java --version
           dotnet --version
           nginx -V
+        shell: bash
   python-script:
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +31,6 @@ jobs:
           import platform
           print(platform.processor())
           print(platform.architecture())
-        shell: python
   windows-script:
     runs-on: windows-latest
     needs: [hello-world, get-versions, python-script]
